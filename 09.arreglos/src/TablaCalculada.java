@@ -12,12 +12,13 @@ public class TablaCalculada {
 
         // 3. calcular minimo
         minimo(tabla);
-        imprimir(tabla);
+        
         // 4. calcular maximo
+        maximo(tabla);
+        imprimir(tabla);
 
         // 5. calcular promedio
 
-        // 6. imprimir resultados
     }
 
     public static int[][] inicializarTabla(){
@@ -58,6 +59,18 @@ public class TablaCalculada {
                 }
             }
             tabla[i][tabla.length] = min;
+        }        
+    }
+
+    public static void maximo(int[][] tabla) {
+        for (int i = 0; i < tabla.length; i++) {
+            int max = tabla[i][0];
+            for (int j = 0; j < tabla.length; j++) {
+                if (tabla[i][j] > max) {
+                    max = tabla[i][j];
+                }
+            }
+            tabla[i][tabla.length + 1] = max;
         }        
     }
     
