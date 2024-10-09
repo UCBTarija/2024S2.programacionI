@@ -8,18 +8,16 @@ public class TablaCalculada {
         int[][] tabla = inicializarTabla();
 
         // 2. generar la tabla
-        generarTabla(tabla);
+        generarTabla(tabla);        
+
+        // 3. calcular minimo
+        minimo(tabla);
         imprimir(tabla);
+        // 4. calcular maximo
 
-        // 3. imprimir la tabla
+        // 5. calcular promedio
 
-        // 4. calcular minimo
-
-        // 5. calcular maximo
-
-        // 6. calcular promedio
-
-        // 7. imprimir resultados
+        // 6. imprimir resultados
     }
 
     public static int[][] inicializarTabla(){
@@ -49,6 +47,18 @@ public class TablaCalculada {
                 tabla[i][j] = rnd.nextInt(100);
             }
         }
-    }    
+    }
+
+    public static void minimo(int[][] tabla) {
+        for (int i = 0; i < tabla.length; i++) {
+            int min = tabla[i][0];
+            for (int j = 0; j < tabla.length; j++) {
+                if (tabla[i][j] < min) {
+                    min = tabla[i][j];
+                }
+            }
+            tabla[i][tabla.length] = min;
+        }        
+    }
     
 }
