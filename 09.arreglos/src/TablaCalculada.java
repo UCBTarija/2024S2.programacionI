@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class TablaCalculada {
@@ -7,6 +8,8 @@ public class TablaCalculada {
         int[][] tabla = inicializarTabla();
 
         // 2. generar la tabla
+        generarTabla(tabla);
+        imprimir(tabla);
 
         // 3. imprimir la tabla
 
@@ -37,5 +40,15 @@ public class TablaCalculada {
             System.out.println();
         }
     }
+
+    public static void generarTabla(int[][] tabla) {
+        Random rnd = new Random();
+
+        for (int i = 0; i < tabla.length; i++) {
+            for (int j = 0; j < tabla.length; j++) {
+                tabla[i][j] = rnd.nextInt(100);
+            }
+        }
+    }    
     
 }
