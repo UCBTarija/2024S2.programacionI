@@ -15,9 +15,11 @@ public class TablaCalculada {
         
         // 4. calcular maximo
         maximo(tabla);
-        imprimir(tabla);
-
+        
         // 5. calcular promedio
+        promedio(tabla);
+
+        imprimir(tabla);
 
     }
 
@@ -74,4 +76,13 @@ public class TablaCalculada {
         }        
     }
     
+    public static void promedio(int[][] tabla) {
+        for (int i = 0; i < tabla.length; i++) {
+            int suma = 0;
+            for (int j = 0; j < tabla.length; j++) {
+                suma += tabla[i][j];
+            }
+            tabla[i][tabla.length + 2] = suma / tabla.length;
+        }        
+    }
 }
