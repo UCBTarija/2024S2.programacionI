@@ -1,6 +1,7 @@
 import java.util.Random;
 
 public class Multidimensional {
+    
     public static void main(String[] args) throws Exception {
         int[][] tabla = generarAleatoria(4, 5);
         int impares = contarImpares(tabla);
